@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="433.0" style="-fx-background-color: cddc39;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infixevaluatergui.FXMLDocumentController">
+   <children>
+      <JFXTextField fx:id="prefixTf" labelFloat="true" layoutX="83.0" layoutY="83.0" prefHeight="29.0" prefWidth="268.0" promptText="Prefix Expression" unFocusColor="#1b1919">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="134.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expression Evaluater">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="evaluateButton" layoutX="176.0" layoutY="131.0" onAction="#evaluateButtonAction" style="-fx-background-color: skyblue;" stylesheets="@Button.css" text="Evaluate">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="crearButton" layoutX="76.0" layoutY="173.0" onAction="#clearButtonAction" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: skyblue;" stylesheets="@Button.css" text="Clear">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextArea fx:id="textArea1" editable="false" labelFloat="true" layoutX="83.0" layoutY="238.0" prefHeight="166.0" prefWidth="268.0" unFocusColor="#8a5858" />
+      <JFXButton fx:id="quitButton" layoutX="272.0" layoutY="173.0" onAction="#quitButtonAction" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: skyblue;" text="Quit">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="resultLabel" layoutX="194.0" layoutY="228.0" text="Result">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
