@@ -7,14 +7,15 @@ public class EvaluateExpression {
   private StringTokenizer tokenizer;
   private String pattern;
   
-  public EvaluateExpression (StringTokenizer tokenizer , String operaters) {
-    line = new StringBuilder();
+  public EvaluateExpression (StringTokenizer tokenizer , String pattern) {
+    this.line = new StringBuilder();
     this.tokenizer = token;
     this.pattern = pattern;
-    this.var = var;
   }
   
   public String result() {
+    Stack<String> operaters = new Stack<>();
+    Stack<String> values = new Stack<>();
     String token, thisOp, second, first, peekOp, result;
     while(tokenizer.hasMoreTokens()) {
       token = tokenizer.nextToken().trim();
@@ -25,7 +26,7 @@ public class EvaluateExpression {
         values.push(token);
       } else if (pattern.contains(token)) {
         thisOp = token;
-        while (!operaters.isEmpty() && (precedence(opersters.peek()) <= precedence(thisOp))) {
+        while (!operaters.isEmpty() && (precedence(operaters.peek()) <= precedence(thisOp))) {
           if(values.isEmpty()) {
             throw new PrefixException("Stack under flow: Operaters left over");
           }
@@ -88,7 +89,6 @@ public class EvaluateExpression {
         }
         } catch (NumberFormatException NFE) {
           throw new PrefixException("Stack over flow: Extra operaters");
-          throw NFE;
         }
         return Integer.toString(result);
       }
