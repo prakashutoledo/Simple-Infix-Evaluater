@@ -2,7 +2,7 @@ package infixevaluatergui;
 
 public class Node<E> {
 
-    Node link;
+    Node<?> link;
     E info;
 
     public Node(E obj) {
@@ -10,11 +10,11 @@ public class Node<E> {
         info = obj;
     }
 
-    public Node getLink() {
+    public Node<?> getLink() {
         return link;
     }
 
-    public void setLink(Node link) {
+    public void setLink(Node<?> link) {
         this.link = link;
     }
 
