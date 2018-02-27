@@ -1,11 +1,10 @@
 
 package infixevaluatergui;
 
-public class Stack<E> implements UnboundedStackInterface<E> {
 
+public class Stack<E> implements UnboundedStackInterface<E> {
     int count;
     Node<E> peek;
-
     public Stack() {
         count = 0;
         peek  = null;
@@ -25,7 +24,7 @@ public class Stack<E> implements UnboundedStackInterface<E> {
         if (!isEmpty()) {
             E tempElement;
             tempElement = peek.getInfo();
-            peek        = peek.getLink();
+            peek        = (Node<E>) peek.getLink();
             count--;
             return tempElement;
         } else {
