@@ -3,10 +3,6 @@ package infixevaluatergui;
 
 import java.util.StringTokenizer;
 public class InfixEvaluater {
-    
-    StringBuilder p                 = new StringBuilder();
-    private Stack<String> operaters = new Stack<>();
-    private Stack<String> values    = new Stack<>();
     private String infixExp;
 
     public InfixEvaluater(Stack<String> ops, Stack<String> val, String input) {
