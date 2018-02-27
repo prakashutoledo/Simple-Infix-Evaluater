@@ -49,7 +49,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void evaluateButtonAction(ActionEvent event) {
         Alert alert1, alert2, alert3, alert4, alert5;
-        Stack<String> operators, values;
         String input;
         
         input = prefixTf.getText();
@@ -79,12 +78,10 @@ public class FXMLDocumentController implements Initializable {
             resultLabel.setVisible(true);
             
             try {
-                operators = new Stack<>();
-                values    = new Stack<>();
-                InfixEvaluater infix = new InfixEvaluater(operators, values, input);
-                infix.getResult();
-                print(infix.p.toString());
-                print("The prefix evaluation of " + input + " = " + infix.getResult());
+                InfixEvaluater infix = new InfixEvaluater(input);
+                String result = infix.getResult();
+                print(infix.line.toString());
+                print("The prefix evaluation of " + input + " = " + result);
                 textArea1.setVisible(true);
                 
             } catch (EmptyStackException | PrefixException e) {
