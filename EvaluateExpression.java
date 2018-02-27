@@ -28,16 +28,19 @@ public class EvaluateExpression {
 				while (!operaters.isEmpty() && (precedence(operaters.peek()) <= precedence(thisOp))) {
 					if (values.isEmpty()) {
 						throw new PrefixException("Stack under flow: Not enough operands");
+					} else {
+						second = values.pop();
 					}
-					second = values.pop();
 					if (values.isEmpty()) {
 						throw new PrefixException("Stack under flow: Not enough operands");
+					} else {
+						first = values.pop();
 					}
-					first = values.pop();
 					if (operaters.isEmpty()) {
 						throw new PrefixException("Stack under flow: Operands left over");
+					} else {
+						peekOp = operaters.pop();
 					}
-					peekOp = operaters.pop();
 					result = getValue(second, peekOp, first);
 					values.push(result);
 				}
@@ -49,8 +52,9 @@ public class EvaluateExpression {
 
 			if (operaters.isEmpty()) {
 				throw new PrefixException("Stack under flow: Not enough operaters");
+			} else {
+				peekOp = operaters.pop();
 			}
-			peekOp = operaters.pop();
 			if (values.isEmpty()) {
 				throw new PrefixException("Stack under flow: Not enough operands");
 			} else {
