@@ -1,13 +1,10 @@
 package infixevaluatergui;
 
 
-import java.util.StringTokenizer;
 public class InfixEvaluater {
     private String infixExp;
-
-    public InfixEvaluater(Stack<String> ops, Stack<String> val, String input) {
-        operaters = ops;
-        values    = val;
+    public StringBuilder process = null;
+    public InfixEvaluater(String input) {
         infixExp  = input;
     }
 
@@ -19,29 +16,18 @@ public class InfixEvaluater {
         this.infixExp = infixExp;
     }
 
-    public Stack<String> getOperaters() {
-        return operaters;
-    }
-
-    public void setOperaters(Stack<String> operaters) {
-        this.operaters = operaters;
-    }
-
-    public Stack<String> getValues() {
-        return values;
-    }
-
-    public void setValues(Stack<String> values) {
-        this.values = values;
-    }
-
-    public String getResult() {
+    public String getResult() throws Exception{
         String pattern, result;
         StringTokenizer tokenizer;
         pattern   = "*+-";
         tokenizer = new StringTokenizer(infixExp, pattern, true);
-        EvaluateExpression evaluater = new ExpressionEvaluater(tokenizer, pattern);
+        EvaluateExpression evaluater = new EvaluateExpression(tokenizer, pattern);
+        process = evaluater.line; 
         result    = evaluater.result();
         return result;
+    }
+    
+    public StringBuilder getProcess() {
+    	return process;
     }
 }
