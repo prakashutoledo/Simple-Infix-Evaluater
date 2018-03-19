@@ -111,4 +111,8 @@ public class EvaluateExpression {
 		}
 		return Long.toString(result);
 	}
+	
+	public String getLine() {
+		return line;
+	}
 }
