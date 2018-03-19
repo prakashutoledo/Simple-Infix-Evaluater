@@ -22,7 +22,7 @@ public class InfixEvaluater {
         pattern   = "*+-";
         tokenizer = new StringTokenizer(infixExp, pattern, true);
         EvaluateExpression evaluater = new EvaluateExpression(tokenizer, pattern);
-        process = evaluater.line; 
+        process = evaluater.getLine(); 
         result    = evaluater.result();
         return result;
     }
