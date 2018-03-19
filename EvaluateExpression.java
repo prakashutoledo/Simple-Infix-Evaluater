@@ -112,7 +112,7 @@ public class EvaluateExpression {
 		return Long.toString(result);
 	}
 	
-	public String getLine() {
+	public StringBuilder getLine() {
 		return line;
 	}
 }
